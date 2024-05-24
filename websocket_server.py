@@ -9,16 +9,16 @@ async def send_json_message():
         while True:
             actionIndex = int(input("(1)Forward\n(2)Backward\n(3)Left\n(4)Right\n(5)Jump\n(6)Squat\n(7)Attack\n選擇要發送的字串:"))-1
             actionDic = {
-                "FORWARD": False,
-                "BACKWARD": False,
-                "LEFTHAND": False,
-                "RIGHTHAND": False,
-                "JUMP": False,
-                "SQUAT": False,
-                "ATTACK": False
+                "FORWARD": 'false',
+                "BACKWARD": 'false',
+                "LEFTHAND": 'false',
+                "RIGHTHAND": 'false',
+                "JUMP": 'false',
+                "SQUAT": 'false',
+                "ATTACK": 'false'
             }
             message = output_Action[actionIndex]
-            actionDic[message] = True
+            actionDic[message] = 'true'
             await websocket.send(json.dumps(actionDic))
             print(f"Sent message: {message}\n\n")
 

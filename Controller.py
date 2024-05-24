@@ -9,7 +9,7 @@ async def echo(websocket, path):
         async for message in websocket:
             data = json.loads(message)
             for key in data:
-                if data[key] == True:
+                if data[key] == 'true':
                     print("Received message:", key)
                     pyautogui.press(keyBoardSettingJson[key])
                     print("Output keyBoard signal :" + keyBoardSettingJson[key])

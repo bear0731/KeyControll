@@ -23,6 +23,7 @@ def on_key_press(event, entry):
         return
     entry.delete(0, tk.END)
     entry.insert(0, event.keysym)
+    return "break"
     
 # Create the main window
 root = tk.Tk()
