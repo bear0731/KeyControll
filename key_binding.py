@@ -5,12 +5,12 @@ import json
 
 def save_key_bindings():
     bindings = {
-        "Forward": entry_forward.get(),
-        "Backward": entry_backward.get(),
-        "Left": entry_left.get(),
-        "Right": entry_right.get(),
-        "Jump": entry_jump.get(),
-        "Attack": entry_attack.get()
+        "FORWARD": entry_forward.get(),
+        "BACKWARD": entry_backward.get(),
+        "LEFTHAND": entry_left.get(),
+        "RIGHTHAND": entry_right.get(),
+        "JUMP": entry_jump.get(),
+        "ATTACK": entry_attack.get()
     }
     with open("key_bindings.json", "w") as f:
         json.dump(bindings, f)
