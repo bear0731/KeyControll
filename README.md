@@ -6,5 +6,3 @@ websocjet_server：模擬 kinect 丟字串到 client。
 使用說明:  
 先啟動client.py，再啟動server.py。  
 btw，可以在client、server端啟動的同時，更改自訂義鍵盤訊號，不會炸裂。  
-
-Update: 更新功能，可接收Kinect組傳來的資料並執行
