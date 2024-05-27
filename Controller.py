@@ -5,17 +5,19 @@ import pyautogui
 
 async def echo(websocket, path):
     with open('./key_bindings.json', 'r') as file:
-        keyBoardJson = json.load(file)
+        keyBoardSettingJson = json.load(file) # get keyboard setting from json
         async for message in websocket:
             data = json.loads(message)
-            print("Received message:", data)
-            pyautogui.press(keyBoardJson[data])
-            print("Output keyBoard signal :" + keyBoardJson[data])
+            for key in data:
+                if data[key] == True:
+                    print("Received message:", key)
+                    pyautogui.press(keyBoardSettingJson[key])
+                    print("Output keyBoard signal :" + keyBoardSettingJson[key])
 
 async def main():
 
     async with websockets.serve(echo, "localhost", 8765):
-        print("WebSocket server started on ws://localhost:8765")
+        print("Controller Listening...")
         await asyncio.Future()  # run forever
 
 if __name__ == "__main__":
