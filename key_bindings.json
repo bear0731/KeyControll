@@ -1,1 +1,12 @@
-{"FORWARD": "w", "BACKWARD": "s", "LEFTHAND": "a", "RIGHTHAND": "d", "JUMP": "space", "SQUAT": "Control_L", "ATTACK": "c"}
+{
+    "JUMP" : "space",
+    "RIGHTHAND" : "d",
+    "LEFTHAND" : "a",
+    "SQUAT" : "Control_L",
+    "FORWARD" : "w",
+    "BACKWARD" : "s",
+    "LEFTHANDOPEN" : "q",
+    "RIGHTHANDOPEN" : "e",
+    "LEFTHANDCLOSE" : "z",
+    "RIGHTHANDCLOSE" : "c"
+}

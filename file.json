@@ -1,1 +1,12 @@
-{"BACKWARD":false,"FORWARD":false,"JUMP":true,"LEFTHAND":false,"RIGHTHAND":false,"SQUAT":false}
+{
+  "JUMP": false,
+  "RIGHTHAND": false,
+  "LEFTHAND": false,
+  "SQUAT": false,
+  "FORWARD": false,
+  "BACKWARD": false,
+  "LEFTHANDOPEN": false,
+  "RIGHTHANDOPEN": false,
+  "LEFTHANDCLOSE": false,
+  "RIGHTHANDCLOSE": false
+}
