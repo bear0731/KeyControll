@@ -11,7 +11,6 @@ def save_key_bindings():
         "RIGHTHAND": entry_right.get(),
         "JUMP": entry_jump.get(),
         "SQUAT": entry_squat.get(),
-        "ATTACK": entry_attack.get(),
         "LEFTHANDOPEN": entry_leftOpen.get(),
         "RIGHTHANDOPEN": entry_rightOpen.get(),
         "LEFTHANDCLOSE": entry_leftClose.get(),
@@ -32,7 +31,7 @@ def on_key_press(event, entry):
 # Create the main window
 root = tk.Tk()
 root.title("Custom Key Bindings")
-root.geometry("300x350")
+root.geometry("300x500")
 
 # Labels and entry fields
 tk.Label(root, text = "Forward").grid(row = 0, column = 0, pady = 5)
@@ -65,34 +64,29 @@ entry_squat = tk.Entry(root)
 entry_squat.grid(row = 5, column = 1, pady = 5)
 entry_squat.bind("<KeyPress>", lambda event: on_key_press(event, entry_squat))
 
-tk.Label(root, text="Attack").grid(row = 6, column = 0, pady = 5)
-entry_attack = tk.Entry(root)
-entry_attack.grid(row = 6, column = 1, pady = 5)
-entry_attack.bind("<KeyPress>", lambda event: on_key_press(event, entry_attack))
-
-tk.Label(root, text="LeftOpen").grid(row = 7, column = 0, pady = 5)
+tk.Label(root, text="LeftOpen").grid(row = 6, column = 0, pady = 5)
 entry_leftOpen = tk.Entry(root)
-entry_leftOpen.grid(row = 7, column = 1, pady = 5)
+entry_leftOpen.grid(row = 6, column = 1, pady = 5)
 entry_leftOpen.bind("<KeyPress>", lambda event: on_key_press(event, entry_leftOpen))
 
-tk.Label(root, text="RightOpen").grid(row = 8, column = 0, pady = 5)
+tk.Label(root, text="RightOpen").grid(row = 7, column = 0, pady = 5)
 entry_rightOpen = tk.Entry(root)
-entry_rightOpen.grid(row = 8, column = 1, pady = 5)
+entry_rightOpen.grid(row = 7, column = 1, pady = 5)
 entry_rightOpen.bind("<KeyPress>", lambda event: on_key_press(event, entry_rightOpen))
 
-tk.Label(root, text="LeftClose").grid(row = 9, column = 0, pady = 5)
+tk.Label(root, text="LeftClose").grid(row = 8, column = 0, pady = 5)
 entry_leftClose = tk.Entry(root)
-entry_leftClose.grid(row = 9, column = 1, pady = 5)
+entry_leftClose.grid(row = 8, column = 1, pady = 5)
 entry_leftClose.bind("<KeyPress>", lambda event: on_key_press(event, entry_leftClose))
 
-tk.Label(root, text="RightClose").grid(row = 10, column = 0, pady = 5)
+tk.Label(root, text="RightClose").grid(row = 9, column = 0, pady = 5)
 entry_rightClose = tk.Entry(root)
-entry_rightClose.grid(row = 10, column = 1, pady = 5)
+entry_rightClose.grid(row = 9, column = 1, pady = 5)
 entry_rightClose.bind("<KeyPress>", lambda event: on_key_press(event, entry_rightClose))
 
 # Save button
 button_save = tk.Button(root, text="Save Key Bindings", command=save_key_bindings)
-button_save.grid(row=7, column=0, columnspan=2, pady=20)
+button_save.grid(row=10, column=0, columnspan=2, pady=20)
 
 # Run the main loop
 root.mainloop()
