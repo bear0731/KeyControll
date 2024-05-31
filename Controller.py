@@ -22,7 +22,7 @@ async def echo(websocket, path):
         stopEvent.set()
 
 async def main():
-    async with websockets.serve(echo, "localhost", 8765):
+    async with websockets.serve(echo, "localhost", 8765, ping_interval=10000, ping_timeout=10000):
         print("Controller Listening...")
         await stopEvent.wait()  # run until there has no signal input
 
