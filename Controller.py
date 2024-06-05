@@ -12,8 +12,8 @@ process = None
 async def echo(websocket, path):
     try:
         print(f"Client connected from {websocket.remote_address}")
-        with open('./key_bindings.json', 'r') as file:
-            keyBoardSettingJson = json.load(file) # get keyboard setting from json
+        with open("./key_bindings.json", "r") as file:
+            keyBoardSettingJson = json.load(file)  # get keyboard setting from json
             async for message in websocket:
                 data = json.loads(message)
                 for key in data:
@@ -25,6 +25,7 @@ async def echo(websocket, path):
         print(f"Connection closed with error: {e}")
         stopEvent.set()
 
+
 async def main():
     async with websockets.serve(echo, "localhost", 8765):
         print("Controller Listening...")
@@ -33,11 +34,13 @@ async def main():
         await stopEvent.wait()  # run until there has no signal input
         process.terminate()
 
+
 def closeKinect():
     global process
     if process is not None:
         process.terminate()
         process = None
+
 
 if __name__ == "__main__":
     try:
@@ -45,4 +48,3 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         closeKinect()
         print("Controller stopped by user.")
-   
