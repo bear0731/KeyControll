@@ -2,20 +2,25 @@ import asyncio
 import websockets
 import json
 
-output_Action =["FORWARD", "BACKWARD", "LEFTHAND", "RIGHTHAND", "JUMP", "SQUAT", "ATTACK"]
+output_Action = ["JUMP", "RIGHTHAND", "LEFTHAND", "SQUAT", "FORWARD", "BACKWARD", "LEFTHANDOPEN", "RIGHTHANDOPEN", "LEFTHANDCLOSE", "RIGHTHANDCLOSE"]
 async def send_json_message():
     uri = "ws://localhost:8765"
     async with websockets.connect(uri) as websocket:
         while True:
-            actionIndex = int(input("(1)Forward\n(2)Backward\n(3)Left\n(4)Right\n(5)Jump\n(6)Squat\n(7)Attack\n選擇要發送的字串:"))-1
+            for num in range(1, 11):
+                print(f"({num}){output_Action[num - 1]}")
+            actionIndex = int(input("選擇要發送的字串:"))-1
             actionDic = {
-                "FORWARD": False,
-                "BACKWARD": False,
-                "LEFTHAND": False,
-                "RIGHTHAND": False,
-                "JUMP": False,
-                "SQUAT": False,
-                "ATTACK": False
+                "JUMP" : False,
+                "RIGHTHAND" : False,
+                "LEFTHAND" : False,
+                "SQUAT" : False,
+                "FORWARD" : False,
+                "BACKWARD" : False,
+                "LEFTHANDOPEN" : False,
+                "RIGHTHANDOPEN" : False,
+                "LEFTHANDCLOSE" : False,
+                "RIGHTHANDCLOSE" : False
             }
             message = output_Action[actionIndex]
             actionDic[message] = True
